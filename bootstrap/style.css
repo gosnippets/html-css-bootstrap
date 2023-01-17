@@ -1,4 +1,4 @@
-.container {
+/* .container {
     margin: 20px;
 }
 
@@ -8,4 +8,8 @@
 
 .img-margin {
     margin-top: -20px;
+} */
+
+.nav-link {
+    color: green;
 }
