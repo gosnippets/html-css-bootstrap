@@ -13,3 +13,19 @@
 .nav-link {
     color: green;
 }
+
+.nav-item .active {
+    background-color: #0d6efd !important;
+    border-color: #0d6efd !important;
+    color: red !important;
+}
+
+.mytab-content {
+    margin-top: -40px;
+    padding-top: 45px;
+}
+
+.custom-bg {
+    background: rgb(155,82,158);
+    background: linear-gradient(90deg, rgba(155,82,158,1) 20%, rgba(131,58,180,1) 49%);
+}
