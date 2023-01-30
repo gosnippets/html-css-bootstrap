@@ -78,7 +78,7 @@ var arry6 = ["d", "e", "f"];
 // console.log(num1);
 // console.log("Smallest=", num1[num1.length-1], "Greatest=", num1[0]);
 
-const text1 = ["z", "a", "f", "b", "c"];
+// const text1 = ["z", "a", "f", "b", "c"];
 // console.log(text1.sort());
 // console.log(text1[0],text1[text1.length-1])
 // console.log(text1.reverse());
@@ -88,11 +88,68 @@ const text1 = ["z", "a", "f", "b", "c"];
 //     console.log(index, value, arry);
 // })
 
-text1.map(myFunc);
+// text1.map(myFunc);
 
-function myFunc(value, index, arry) {
-  console.log(index, value, arry);
-}
+// function myFunc(value, index, arry) {
+//   console.log(index, value, arry);
+// }
 
-text1.forEach((value, index, arry)=> console.log(index, value, arry))
-text1.forEach(myFunc);
+// text1.forEach((value, index, arry)=> console.log(index, value, arry))
+// text1.forEach(myFunc);
+
+// const numArry = [33, 10, 9, 45, 78];
+
+// let newArry = numArry.map(myFunc)
+// let newArry2 = numArry.forEach(myFunc)
+// console.log(newArry)
+// console.log(newArry2)
+
+// function myFunc(value, index, arry) {
+//   return value*2;
+// }
+
+// const numArry = [33, 10, 9, 45, 78];
+// let newArry = numArry.filter(myFunc2);
+// console.log(newArry);
+
+// function myFunc2(value, key, arry) {
+//   console.log(value, key, arry);
+//   return value % 2 == 1;
+// }
+
+// const numArry = [33, 10, 9, 45, 78];
+// let sum = numArry.reduce(myFunc3,100);
+// console.log("Sum = ", sum)
+
+// let sum = numArry.reduceRight(myFunc3);   //Without default value
+// let sum = numArry.reduceRight(myFunc3,0); // With default value
+// console.log("Sum = ", sum)
+
+// function myFunc3(prev, currentValue, index, arry) {
+//   console.log(prev, currentValue, index);
+//   return prev + currentValue;
+// }
+
+// const numArry = [33, 10, 9, 33, 45, 78];
+// let every = numArry.every(myFunc4);
+
+// let some = numArry.some(myFunc4);
+// console.log(every, some);
+
+// function myFunc4(value, index, arry) {
+//   return value > 80;
+// }
+
+// const numArry = [33, 10, 9, 33, 45, 78];
+// let value = numArry.find(myFunc4);
+// let index = numArry.findIndex(myFunc4);
+
+// console.log(value,index)
+
+const numArry = [33, 10, 9, 45, 78];
+const strArry = ["Ravi","Surya", "Himanshu"];
+
+let isNum = numArry.includes(10);
+let isName = strArry.includes("Surya");
+
+console.log(isNum, isName)
