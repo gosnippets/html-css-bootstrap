@@ -142,7 +142,7 @@ var arry6 = ["d", "e", "f"];
 
 // const numArry = [33, 10, 9, 33, 45, 78];
 // let value = numArry.find(myFunc4);
-// let index = numArry.findIndex(myFunc4);
+// let index = numArry.findIndex(myFunc4); 
 
 // console.log(value,index)
 
