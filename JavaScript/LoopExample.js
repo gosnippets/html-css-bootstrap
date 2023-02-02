@@ -43,7 +43,6 @@
 // for(var i=0;i<10;i++){}
 // console.log(i);
 
-
 // console.log(text.charCodeAt(0));
 // var newText = "";
 // for(let i=0; i<text.length; i++){
@@ -92,15 +91,14 @@
 //     console.log(index, value)
 // })
 
-var num=1;
+// var num = 1;
 
-while (num<=10) {
-    console.log(num)
-    num++;    
-}
+// while (num <= 10) {
+//   console.log(num);
+//   num++;
+// }
 
-console.log("Hello");
-
+// console.log("Hello");
 
 // var text = "Thi2$s is Text.. Pl343ease print s54tring on@ly"
 // var text = " "
@@ -113,7 +111,6 @@ console.log("Hello");
 // Find out only number from above string
 // Expected Output : 234354
 
-
 // 1 2 3 4 5
 // 1 2 3 4
 // 1 2 3
@@ -137,3 +134,68 @@ console.log("Hello");
 // 01 02 03
 // 01 02 03 04
 // 01 02 03 04 05
+
+// let num = 4;
+// for (var i = 1; i <= 10; i++) {
+//     console.log(num * i)
+// }
+
+// for (var i = 0; i <= 20; i++) {
+//   if (i % 2 == 0) {
+//     console.log(i);
+//   }
+// }
+
+// var str = "";
+// for (var i = 5; i >= 1; i--) {
+//   for (var j = 1; j <= i; j++) {
+//     str = str + j + " ";
+//   }
+//   str = str + "\n";
+// }
+
+// console.log(str);
+
+// var str2 = "";
+// for(var i=1; i<=5; i++){
+//     for(var j= 1; j<=i;j++){
+//         str2 = str2 + "0"+ j + " ";
+//     }
+//     str2 = str2 + "\n";
+// }
+// console.log(str2)
+
+// var num = 5;
+// var i = 1;
+
+// while (i <= 10) {
+//   console.log(num * i);
+//   i++;
+// }
+
+// while (i <= 20) {
+//   if (i % 2 == 1) {
+//     console.log(i);
+//   }
+//   i++;
+// }
+
+// create a function to check odd number
+// create a function to check even number
+// create a function to check prime number
+
+// function checkEvenOdd(num) {
+//   if (num % 2 == 1) {
+//     return num + " is Odd Number";
+//   }
+//   return num + " is even Number";
+// }
+
+// console.log(checkEvenOdd(5));
+var i = 7;
+
+do {
+    console.log(i);
+    i++;
+} while (i<=5);
+
