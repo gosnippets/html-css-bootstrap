@@ -192,10 +192,149 @@
 // }
 
 // console.log(checkEvenOdd(5));
-var i = 7;
+// var i = 7;
 
-do {
-    console.log(i);
-    i++;
-} while (i<=5);
+// do {
+//     console.log(i);
+//     i++;
+// } while (i<=5);
+
+// function CheckPrimeNumber(num) {
+//   if(num<=1) return num+" is not valid prime number";
+
+//   for(var i=2; i<num; i++){
+//     if(num%i==0) return num + " is not prime number";
+//   }
+
+//   return num + " is prime number";
+// }
+
+// console.log(CheckPrimeNumber(10))
+
+// for(var i=1; i<=20; i++) {
+//   if(i==4) break;
+
+//   console.log(i)
+// }
+
+// const arry = [{name:"Ravi"}, {name:"Surya"}, {name:"Shyam"}]
+
+// for(var obj of arry) {
+//   if(obj.name=="Surya") break;
+
+//   console.log(obj.name)
+// }
+
+// for(var i=1; i<=10; i++) {
+//   if(i==4 || i==5 || i==7) continue;
+
+//   console.log(i)
+// }
+
+// switch (key) {
+//   case value:
+
+//     break;
+
+//   default:
+//     break;
+// }
+
+// var day = new Date().getDay();
+// var str = "";
+
+// switch (day) {
+//   case 0:
+//     str = "Sun";
+//     break;
+
+//   case 1:
+//     str = "Mon";
+//     break;
+
+//   case 2:
+//     str = "Tue";
+//     break;
+
+//   case 3:
+//     str = "Wed";
+//     break;
+
+//   case 4:
+//     str = "Thu";
+//     break;
+
+//   case 5:
+//     str = "Fri";
+//     break;
+
+//   case 6:
+//     str = "Sat";
+//     break;
+
+//   default:
+//     str = "Sun";
+// }
+
+// console.log(str);
+
+// case 1 > return sum of two Number
+// case 2 > return subtraction of two Number
+
+// case 3 > return Multiple of two Number
+// case 4 > return division of two Number
+// var a = 10,
+//   b = 5;
+
+// var key = "div";
+
+function sum(a,b) {
+  return a+b;
+}
+
+function myFunc(key, a, b) {
+  switch (key) {
+    case "sum":
+      return "Sum of a and b is " + sum(a,b);
+
+    case "sub":
+      let sub =  a-b;
+      return "Sub of a and b is "+ sub;
+
+    case "mult":
+      let mult = a *b;
+      return "Mult of a and b is " + mult;
+
+    case "div":
+      let div =  a/b;
+      return "Div of a and b is "+ div;
+
+    default:
+      return "Sum of a and b is " + sum(a,b);
+  }
+}
+
+console.log(myFunc("sum", 30, 20));
+console.log(myFunc("sub", 30, 20));
+console.log(myFunc("sub", 30, 20));
+console.log(myFunc("mult", 30, 20));
+console.log(myFunc("div", 30, 20));
+console.log(myFunc("abc", 30, 20));
+
+
+
+// var totalAmount = 10000;
+// withdrawal
+// deposite
+// transfer
+
+// withdrawal = 5000;
+// totalAmount = 5000;
+
+// deposite = 20000;
+// totalAmount = 25000;
+
+// transfer = 15000;
+// totalAmount = 10000;
+
 
