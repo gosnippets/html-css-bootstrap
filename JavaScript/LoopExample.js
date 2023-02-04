@@ -288,38 +288,38 @@
 
 // var key = "div";
 
-function sum(a,b) {
-  return a+b;
+function sum(a, b) {
+  return a + b;
 }
 
 function myFunc(key, a, b) {
   switch (key) {
     case "sum":
-      return "Sum of a and b is " + sum(a,b);
+      return "Sum of a and b is " + sum(a, b);
 
     case "sub":
-      let sub =  a-b;
-      return "Sub of a and b is "+ sub;
+      let sub = a - b;
+      return "Sub of a and b is " + sub;
 
     case "mult":
-      let mult = a *b;
+      let mult = a * b;
       return "Mult of a and b is " + mult;
 
     case "div":
-      let div =  a/b;
-      return "Div of a and b is "+ div;
+      let div = a / b;
+      return "Div of a and b is " + div;
 
     default:
-      return "Sum of a and b is " + sum(a,b);
+      return "Sum of a and b is " + sum(a, b);
   }
 }
 
-console.log(myFunc("sum", 30, 20));
-console.log(myFunc("sub", 30, 20));
-console.log(myFunc("sub", 30, 20));
-console.log(myFunc("mult", 30, 20));
-console.log(myFunc("div", 30, 20));
-console.log(myFunc("abc", 30, 20));
+// console.log(myFunc("sum", 30, 20));
+// console.log(myFunc("sub", 30, 20));
+// console.log(myFunc("sub", 30, 20));
+// console.log(myFunc("mult", 30, 20));
+// console.log(myFunc("div", 30, 20));
+// console.log(myFunc("abc", 30, 20));
 
 
 
@@ -337,4 +337,88 @@ console.log(myFunc("abc", 30, 20));
 // transfer = 15000;
 // totalAmount = 10000;
 
+var totalAmount = 10000;
 
+function bankProcess(process, amount) {
+  switch (process) {
+    case "totalAmount":
+      return "Your total amount is " + totalAmount;
+
+    case "withdrawal":
+      totalAmount = totalAmount - amount;
+      return "Withdrawal is completed"
+
+    case "deposite":
+      totalAmount = totalAmount + amount;
+      return "Deposite is completed";
+
+    case "transfer":
+      totalAmount = totalAmount - amount;
+      return "Transfer is completed";
+  }
+}
+
+// console.log(bankProcess("withdrawal", 1000));
+
+
+//           *
+//         * *
+//       * * *
+//     * * * *
+//   * * * * *
+// * * * * * *
+
+
+//           *
+//         * * *
+//       * * * * *
+//     * * * * * * *
+//   * * * * * * * * *
+// * * * * * * * * * * *
+
+// var str = "";
+// for (var i = 6; i > 0; i--) {
+//   for (var j = i; j > 0; j--) {
+//     str = str + "  "
+//   }
+//   for (var k = 6; k >= i; k--) {
+//     str = str + "* "
+//   }
+//   str = str + "\n";
+// }
+
+// console.log(str);
+
+// Moment
+const date= new Date();
+console.log(date.toUTCString());
+console.log(date.toISOString());
+
+// console.log(date.getTime())
+// console.log(date.getFullYear())
+// console.log(date.getDay())
+// console.log(date.getMonth())
+
+// console.log(date.toLocaleDateString())
+// console.log(date.toLocaleTimeString())
+// console.log(date.toLocaleString())
+
+// const date2= new Date("2022-09-23");
+// console.log(date2);
+// console.log(date2.getTime())
+// console.log(date2.getFullYear())
+// console.log(date2.getDay())
+// console.log(date2.getMonth())
+
+
+// const date3= new Date("2019");
+// console.log(date3)
+// if(name=="ram"){
+
+// }
+// while(name=="ram") {
+//   asdfa
+// }
+
+console.log(true || false && true)
+console.log(true && false || true)
