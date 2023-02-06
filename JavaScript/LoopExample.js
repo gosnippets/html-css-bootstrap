@@ -288,31 +288,31 @@
 
 // var key = "div";
 
-function sum(a, b) {
-  return a + b;
-}
+// function sum(a, b) {
+//   return a + b;
+// }
 
-function myFunc(key, a, b) {
-  switch (key) {
-    case "sum":
-      return "Sum of a and b is " + sum(a, b);
+// function myFunc(key, a, b) {
+//   switch (key) {
+//     case "sum":
+//       return "Sum of a and b is " + sum(a, b);
 
-    case "sub":
-      let sub = a - b;
-      return "Sub of a and b is " + sub;
+//     case "sub":
+//       let sub = a - b;
+//       return "Sub of a and b is " + sub;
 
-    case "mult":
-      let mult = a * b;
-      return "Mult of a and b is " + mult;
+//     case "mult":
+//       let mult = a * b;
+//       return "Mult of a and b is " + mult;
 
-    case "div":
-      let div = a / b;
-      return "Div of a and b is " + div;
+//     case "div":
+//       let div = a / b;
+//       return "Div of a and b is " + div;
 
-    default:
-      return "Sum of a and b is " + sum(a, b);
-  }
-}
+//     default:
+//       return "Sum of a and b is " + sum(a, b);
+//   }
+// }
 
 // console.log(myFunc("sum", 30, 20));
 // console.log(myFunc("sub", 30, 20));
@@ -337,26 +337,26 @@ function myFunc(key, a, b) {
 // transfer = 15000;
 // totalAmount = 10000;
 
-var totalAmount = 10000;
+// var totalAmount = 10000;
 
-function bankProcess(process, amount) {
-  switch (process) {
-    case "totalAmount":
-      return "Your total amount is " + totalAmount;
+// function bankProcess(process, amount) {
+//   switch (process) {
+//     case "totalAmount":
+//       return "Your total amount is " + totalAmount;
 
-    case "withdrawal":
-      totalAmount = totalAmount - amount;
-      return "Withdrawal is completed"
+//     case "withdrawal":
+//       totalAmount = totalAmount - amount;
+//       return "Withdrawal is completed"
 
-    case "deposite":
-      totalAmount = totalAmount + amount;
-      return "Deposite is completed";
+//     case "deposite":
+//       totalAmount = totalAmount + amount;
+//       return "Deposite is completed";
 
-    case "transfer":
-      totalAmount = totalAmount - amount;
-      return "Transfer is completed";
-  }
-}
+//     case "transfer":
+//       totalAmount = totalAmount - amount;
+//       return "Transfer is completed";
+//   }
+// }
 
 // console.log(bankProcess("withdrawal", 1000));
 
@@ -390,9 +390,9 @@ function bankProcess(process, amount) {
 // console.log(str);
 
 // Moment
-const date= new Date();
-console.log(date.toUTCString());
-console.log(date.toISOString());
+// const date= new Date();
+// console.log(date.toUTCString());
+// console.log(date.toISOString());
 
 // console.log(date.getTime())
 // console.log(date.getFullYear())
@@ -420,5 +420,93 @@ console.log(date.toISOString());
 //   asdfa
 // }
 
-console.log(true || false && true)
-console.log(true && false || true)
+// console.log(true || false && true)
+// console.log(true && false || true)
+
+const date2 = new Date("2022-09-23");
+date2.setFullYear(2019);
+date2.setDate(1);
+date2.setMonth(0);
+
+date2.setHours(1)
+date2.setMinutes(22);
+date2.setSeconds(50);
+
+// console.log(date2);
+
+// Math Properties
+const pi = Math.PI;
+// console.log(pi)
+// console.log(Math.sqrt(16));
+
+// console.log(Math.round(3.4));
+// console.log(Math.round(3.5));
+// console.log(Math.round(3.7));
+
+
+// console.log(Math.round(6.5));
+// console.log(Math.round(6.4));
+
+// console.log(Math.ceil(4.3)) //5
+// console.log(Math.floor(4.3)) //4
+
+// console.log(Math.ceil(4.9)) 
+// console.log(Math.ceil(4.1)) //.1 to .9
+// console.log(Math.floor(4.0))
+// console.log(Math.floor(5.9)) 
+
+// console.log(Math.trunc(10.455))
+// console.log(Math.trunc(13.0455))
+// console.log(Math.trunc(3.9))
+
+
+// 2^4
+// console.log(Math.pow(2,4))
+// console.log(Math.pow(10,3))
+
+// console.log(Math.sign(23));
+// console.log(Math.sign(-2));
+// console.log(Math.sign(0));
+// console.log(Math.sign(100));
+
+// console.log(Math.abs(-20.25))
+// console.log(Math.abs(20.25))
+
+// console.log("Smallest number = ", Math.min(2, 10, -3, 46, 300, -200))
+// console.log("Greatest number = ", Math.max(2, 10, -3, 46, 300, -200))
+
+
+// function generateRandomNumber() {
+//   const random = Math.random();
+//   return Math.trunc(10 * (random + 1));
+// }
+// console.log(generateRandomNumber())
+let str = "";
+let totalNum = 0
+let a = 0, b = 0;
+
+function funcNum(num) {
+  console.log(num);
+  a = a * 10 + num;
+  str = str + num;
+  console.log(a);
+  document.getElementById("str").innerHTML = str;
+}
+
+function sum() {
+  str = str + "+";
+  b = a;
+  a = 0;
+  document.getElementById("str").innerHTML = str;
+}
+
+function equalTo() {
+  totalNum = a + b;
+  console.log(totalNum);
+  str = totalNum;
+  document.getElementById("str").innerHTML = str;
+}
+
+// 0 to 9
+// - + / * Math sign
+// = show all calculation
