@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="onLoadFunc('load')">
+
+    <h2 id="showname"></h2>
+    <!-- <input type="text" placeholder="Enter your name" name="username" id="username" onchange="onChangeHandler(this)"/> -->
+
+    <input type="text" placeholder="Enter your name" name="username" id="username" onfocus="onFocusHandler(this)" onchange="onChangeHandler(this)"/>
+
+    <input type="text" placeholder="Enter text" value="Hello world!" onselect="onSelecthandler(this)"/>
+    <br/><br/>
+    
+    <!-- <form method="get"  action="about">
+        <input type="text" id="name" name="name" placeholder="Enter your name"/>
+        <input type="text" id="age" name="age" value="23" placeholder="Enter your age"/>
+        <button type="submit">Submit</button>
+        <button type="reset" >reset</button>
+    </form> -->
+
+    <form method="get" onsubmit="onSubmitHandler()" onreset="onSubmitHandler()" action="javascript:void(0)">
+        <input type="text" id="name" name="name" placeholder="Enter your name"/>
+        <input type="text" id="age" name="age" value="23" placeholder="Enter your age"/>
+        <button type="submit">Submit</button>
+        <button type="reset">reset</button>
+    </form>
+
+    
+    <script src="./event.js"></script>
+</body>
+</html>

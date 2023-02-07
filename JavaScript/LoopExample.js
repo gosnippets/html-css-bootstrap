@@ -481,32 +481,53 @@ const pi = Math.PI;
 //   return Math.trunc(10 * (random + 1));
 // }
 // console.log(generateRandomNumber())
-let str = "";
-let totalNum = 0
-let a = 0, b = 0;
+// let str = "";
+// let totalNum = 0
+// let a = 0, b = 0;
 
-function funcNum(num) {
-  console.log(num);
-  a = a * 10 + num;
-  str = str + num;
-  console.log(a);
-  document.getElementById("str").innerHTML = str;
-}
+// function funcNum(num) {
+//   console.log(num);
+//   a = a * 10 + num;
+//   str = str + num;
+//   console.log(a);
+//   document.getElementById("str").innerHTML = str;
+// }
 
-function sum() {
-  str = str + "+";
-  b = a;
-  a = 0;
-  document.getElementById("str").innerHTML = str;
-}
+// function sum() {
+//   str = str + "+";
+//   b = a;
+//   a = 0;
+//   document.getElementById("str").innerHTML = str;
+// }
 
-function equalTo() {
-  totalNum = a + b;
-  console.log(totalNum);
-  str = totalNum;
-  document.getElementById("str").innerHTML = str;
-}
+// function equalTo() {
+//   totalNum = a + b;
+//   console.log(totalNum);
+//   str = totalNum;
+//   document.getElementById("str").innerHTML = str;
+// }
 
 // 0 to 9
 // - + / * Math sign
 // = show all calculation
+
+let str = ""
+document.getElementById("str").innerHTML = "0";
+
+function clearCal() {
+  str = ""
+  document.getElementById("str").innerHTML = str;
+}
+
+function insert(num) {
+  console.log(num)
+   str = str + num   
+  document.getElementById("str").innerHTML = str;
+}
+
+function equalTo() {
+  str = eval(str);
+  document.getElementById("str").innerHTML = str;
+}
+
+// insert('2')
