@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .my-span {
+            display: block;
+            height: 100px;
+            width: 300px;
+            background-color: blue;
+            margin-top: 5px;
+        }
+        .hidden {
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div style="height: 300px;width: 500px;background-color: red;margin-top: 5px;"></div>
+    <div style="height: 300px;width: 500px;background-color: red; margin-top: 5px;"></div>
+
+    <span class="my-span hidden"></span>
+    <button>Show Span</button>
+
+    <!-- if span tag is hidden then button content= Show Span else Hide span -->
+    
+    <script>
+        let divEl = document.querySelector("div");
+        divEl.style.height = "300px"
+        divEl.style.width = "500px"
+        divEl.style.backgroundColor = "red"
+    </script>
+</body>
+</html>
