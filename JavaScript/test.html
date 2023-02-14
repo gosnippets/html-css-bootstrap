@@ -1,37 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        .my-span {
-            display: block;
-            height: 100px;
-            width: 300px;
-            background-color: blue;
-            margin-top: 5px;
-        }
-        .hidden {
-            visibility: hidden;
-        }
+      .my-span {
+        display: block;
+        height: 100px;
+        width: 500px;
+        background-color: rgb(111, 255, 0);
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+      .hidden {
+        visibility: hidden;
+      }
     </style>
-</head>
-<body>
-    <div style="height: 300px;width: 500px;background-color: red;margin-top: 5px;"></div>
-    <div style="height: 300px;width: 500px;background-color: red; margin-top: 5px;"></div>
+  </head>
+  <body>
+    <div></div>
+    <div></div>
 
     <span class="my-span hidden"></span>
     <button>Show Span</button>
 
+    <input type="text" name="username"/>
+    <input type="password" name="password"/>
+    <button type="submit">Login</button>
+
+    <h2 class="username"></h2>
+    <h2 class="password"></h2>
+
     <!-- if span tag is hidden then button content= Show Span else Hide span -->
-    
+
     <script>
-        let divEl = document.querySelector("div");
-        divEl.style.height = "300px"
-        divEl.style.width = "500px"
-        divEl.style.backgroundColor = "red"
+      // let divEl = document.querySelector("div");
+      // divEl.style.height = "300px"
+      // divEl.style.width = "500px"
+      // divEl.style.backgroundColor = "red"
+
+      let allDivEl = document.querySelectorAll("div");
+      let divEl1 = allDivEl[0];
+      let divEl2 = allDivEl[1];
+
+      for (let divEl of allDivEl) {
+        divEl.style.height = "200px";
+        divEl.style.width = "500px";
+        divEl.style.marginTop = "5px";
+      }
+      
+      divEl1.style.backgroundColor = "red";
+      divEl2.style.backgroundColor = "blue";
+
+      const myspanEl= document.querySelector(".my-span");
+      const btnEl = document.querySelector("button");
+
+      btnEl.addEventListener("click", function(){
+        myspanEl.classList.toggle("hidden");
+        btnEl.textContent=="Show Span"? btnEl.textContent ="Hide span":btnEl.textContent ="Show Span";
+      })
+
     </script>
-</body>
+  </body>
 </html>
