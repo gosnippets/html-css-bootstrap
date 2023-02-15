@@ -21,10 +21,11 @@
   </head>
   <body>
     <div></div>
+    <!-- <div></div>
     <div></div>
 
     <span class="my-span hidden"></span>
-    <button>Show Span</button>
+    <button>Show Span</button> -->
 
     <input type="text" name="username"/>
     <input type="password" name="password"/>
@@ -36,32 +37,55 @@
     <!-- if span tag is hidden then button content= Show Span else Hide span -->
 
     <script>
-      // let divEl = document.querySelector("div");
-      // divEl.style.height = "300px"
-      // divEl.style.width = "500px"
-      // divEl.style.backgroundColor = "red"
+      const input1El =  document.querySelectorAll("input")[0];
+      const input2El =  document.querySelectorAll("input")[1];
+      console.log(input1El, input2El)
 
-      let allDivEl = document.querySelectorAll("div");
-      let divEl1 = allDivEl[0];
-      let divEl2 = allDivEl[1];
-
-      for (let divEl of allDivEl) {
-        divEl.style.height = "200px";
-        divEl.style.width = "500px";
-        divEl.style.marginTop = "5px";
-      }
-      
-      divEl1.style.backgroundColor = "red";
-      divEl2.style.backgroundColor = "blue";
-
-      const myspanEl= document.querySelector(".my-span");
-      const btnEl = document.querySelector("button");
-
-      btnEl.addEventListener("click", function(){
-        myspanEl.classList.toggle("hidden");
-        btnEl.textContent=="Show Span"? btnEl.textContent ="Hide span":btnEl.textContent ="Show Span";
+      document.querySelector("button").addEventListener("click", function(){
+        document.querySelector(".username").textContent = input1El.value
+        document.querySelector(".password").textContent = input2El.value
       })
 
+
+
+      let divEl = document.querySelector("div");
+      divEl.style.height = "10vh"
+      divEl.style.width = "500px"
+      divEl.style.backgroundColor = "red"
+
+      // let allDivEl = document.querySelectorAll("div");
+      // let divEl1 = allDivEl[0];
+      // let divEl2 = allDivEl[1];
+
+      // for (let divEl of allDivEl) {
+      //   divEl.style.height = "200px";
+      //   divEl.style.width = "500px";
+      //   divEl.style.marginTop = "5px";
+      // }
+      
+      // divEl1.style.backgroundColor = "red";
+      // divEl2.style.backgroundColor = "blue";
+
+      // const myspanEl= document.querySelector(".my-span");
+      // const btnEl = document.querySelector("button");
+
+      // btnEl.addEventListener("click", function(){
+      //   myspanEl.classList.toggle("hidden");
+      //   btnEl.textContent=="Show Span"? btnEl.textContent ="Hide span":btnEl.textContent ="Show Span";
+      // })
+
     </script>
+
+     <h2>List of Programming</h2>
+     <ul>
+      <li>Java</li>
+      <li>C++</li>
+     </ul>
+     <input type="text" placeholder="Please enter"/>
+     <button>Add Todo</button>
+
+     <script>
+      // Write your code here 
+     </script>
   </body>
 </html>
