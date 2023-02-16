@@ -1,58 +1,40 @@
 
-// console.log(document.getElementById("username"))
-// console.log(document.getElementsByTagName("h1"))
-// console.log(document.getElementsByClassName("heading"))
+const playAgainBtnEl = document.querySelector(".play-again-btn");
+const checkBtnEl = document.querySelector(".check-btn");
+// const inputNumberEl = document.querySelector(".input-number");
+const bodyEl = document.querySelector("body");
+const remainingChanceEl = document.querySelector(".remaining-chance")
+const bestScoreEl = document.querySelector(".best-score")
+const statusEl = document.querySelector(".status")
+const randomNumberEl = document.querySelector(".random-number");
 
-// console.log(document.querySelector(".heading"))
-// console.log(document.querySelector("#username"))
-// console.log(document.querySelector("h1"))
-// console.log(document.querySelectorAll("h1")[1])
+let randomNumber, bestScore = 0, remaningChance;
 
-// document.getElementsByTagName("h1")[0].style.backgroundColor = "red"
-// document.querySelectorAll("h1")[1].style.backgroundColor = "blue"
-// document.querySelectorAll("h1")[1].style.color = "white"
-
-// const divEl = document.querySelector("div");
-// divEl.textContent = "This is div"
-// divEl.style.height = "300px"
-// divEl.style.width = "600px"
-// divEl.style.background = "#673ab7"
-// divEl.style.color = "rgb(230 207 201)"
-
-let randomNumber;
-generateRandomNumber();
-
-function generateRandomNumber() {
+const init = () => {
+    checkBtnEl.disabled = false;
+    document.querySelector(".input-number").value = "";
+    remainingChanceEl.textContent = 20;
+    remaningChance = 20;
+    statusEl.textContent = "Your Status";
+    randomNumberEl.textContent = "🎸";
     randomNumber = Math.trunc(Math.random() * 20) + 1;
 }
 
-let statusEl = document.querySelector(".status");
-let checkBtnEl = document.querySelector(".check-btn");
-let bodyEl = document.querySelector("body");
-let inputNumberEl = document.querySelector(".input-number");
-let remainingChanceEl = document.querySelector(".remaining-chance")
-
-let remaningChance = 20;
-let bestScore = 0;
-let statusStr = "";
-
-function decrementChance() {
-    remaningChance--;
-    remainingChanceEl.textContent = remaningChance;
-}
+init();
 
 function checkNumber() {
-    let inputNumber = Number(inputNumberEl.value);
+    let inputNumber = Number(document.querySelector(".input-number").value);
 
     if (inputNumber === randomNumber) {
-        if (bestScore <= remaningChance) {
+        if (remaningChance >= bestScore ) {
+            console.log("You Won!", bestScore, remaningChance);
             bestScore = remaningChance;
-            document.querySelector(".best-score").textContent = bestScore
+            bestScoreEl.textContent = bestScore
         }
         statusStr = "<span class='text-success'>You Won!</span>";
         checkBtnEl.disabled = true;
         bodyEl.style.backgroundColor = "#71d8b8";
-        document.querySelector(".random-number").textContent = randomNumber;
+        randomNumberEl.textContent = randomNumber;
 
     } else {
         if (remaningChance <= 1) {
@@ -61,24 +43,14 @@ function checkNumber() {
         } else {
             statusStr = (inputNumber > 20 || inputNumber < 1) ? "<span class='text-danger'>Invalid Input</span>" :
                 (inputNumber > randomNumber) ? "<span class='text-warning'>Too High!</span>" :
-                    (inputNumber < randomNumber) ? "<span class='text-warning'>Too Low!</span>":null
+                    (inputNumber < randomNumber) ? "<span class='text-warning'>Too Low!</span>" : null
         }
     }
 
     statusEl.innerHTML = statusStr;
-    decrementChance();
-}
-
-function resetGame() {
-    generateRandomNumber();
-    remaningChance = 20;
+    remaningChance--;
     remainingChanceEl.textContent = remaningChance;
-    inputNumberEl.value = ""
-    checkBtnEl.disabled = false;
-    statusEl.innerHTML = "<span>Your status</span>";
-    bodyEl.style.backgroundColor = "white";
 }
 
 checkBtnEl.addEventListener("click", () => checkNumber())
-document.querySelector(".play-again-btn").addEventListener("click", () => resetGame())
-
+playAgainBtnEl.addEventListener("click", init);
