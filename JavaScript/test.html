@@ -86,12 +86,12 @@
       const inputEl = document.querySelector("input");
 
       document.querySelector("button").addEventListener("click", function () {
-        const listEl = document.querySelectorAll("li");
-        let elList = "";
-        for (let el of listEl) {
-          elList += `<li>${el.textContent}</li>`;
-        }
-        ulEl.innerHTML = elList + "<li>" + inputEl.value + "</li>";
+        const newLiEl = document.createElement("li");
+        newLiEl.innerHTML = inputEl.value;
+        console.log("newLiEl",newLiEl)
+
+        ulEl.appendChild(newLiEl)
+
         inputEl.value = "";
       });
     </script>
