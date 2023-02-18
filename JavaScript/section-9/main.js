@@ -62,15 +62,54 @@ add(2, 3, 4, 5, 3487, 6465)
 
 // Short Circuiting
 // || = It is checing "undefined" and boolean
-let a, d = 20, c = true, b = undefined;
-console.log(a || b || c || d)
+// let a, d = 20, c = true, b = undefined;
+// console.log(a || b || c || d)
 
-let aname;
-const abcName= aname || "Ram"
-console.log(abcName)
+// let aname;
+// const abcName = aname || "Ram"
+// console.log(abcName)
 
-// &&
-let e=12, f=undefined;
-console.log(e && f)
+// // &&
+// let e = 12, f = undefined;
+// console.log(e && f)
 
+// console.log(0 || 1) // 1
+// console.log(1 || 0) // 1
+// console.log(0 && 1) // 0
+// console.log(1 && 0) // 0
+// console.log(false || true) // true
+// console.log(true || false) // true
+// console.log(false && true) // false
+// console.log(true && false) // false
+
+
+// ?? (Null and Undefined)
+let abc = null;
+console.log(abc ?? 10)
+
+const rest1 = {
+    name: "abc",
+    numGuest: 0
+}
+const rest2 = {
+    name: "rest2Name",
+    owner: "Ravi"
+}
+console.log(rest1.numGuest ?? 10)
+console.log(rest2.numGuest ?? 10)
+
+let count=1;
+count+=1; //count= count + 1
+
+// rest1.numGuest ??= 10 // rest1.numGuest = rest1.numGuest ?? 10
+// rest2.numGuest ??= 10 // rest2.numGuest = rest2.numGuest ?? 10
+
+// rest1.numGuest ||= 10 // rest1.numGuest = rest1.numGuest || 10
+// rest2.numGuest ||= 10 // rest2.numGuest = rest2.numGuest || 10
+
+rest1.numGuest &&= 10 // rest1.numGuest = rest1.numGuest && 10
+rest2.numGuest &&= 10 // rest2.numGuest = rest2.numGuest && 10
+
+console.log(rest1)
+console.log(rest2)
 
