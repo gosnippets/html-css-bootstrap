@@ -68,3 +68,5 @@ for(const value of newLetters){
 
 const lettersSize = letters.size
 console.log("Total size", lettersSize)
+
+console.log(typeof letters) // object
