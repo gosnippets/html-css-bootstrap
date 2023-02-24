@@ -27,3 +27,26 @@ Afterwards, test with your own test data!
 
 GOOD LUCK 😀
 */
+
+console.log("Hello\n World!")
+const textarea = document.createElement("textarea")
+const button = document.createElement("button")
+document.body.append(textarea)
+document.body.append(button)
+button.textContent = "Click"
+
+button.addEventListener("click", function () {
+  const text = document.querySelector('textarea').value
+  const list = text.split('\n');
+
+  for(const value of list){
+    console.log(value.trim())
+
+// underscore_case // remove underscore and make uppercase of first letter of second word. Example :  underscoreCase
+// first_name
+// Some_Variable
+// calculate_AGE
+// delayed_departure
+  }
+  // console.log(list)
+})
