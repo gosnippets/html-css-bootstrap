@@ -40,13 +40,8 @@ button.addEventListener("click", function () {
   const list = text.split('\n');
 
   for(const value of list){
-    console.log(value.trim())
-
-// underscore_case // remove underscore and make uppercase of first letter of second word. Example :  underscoreCase
-// first_name
-// Some_Variable
-// calculate_AGE
-// delayed_departure
+    const [first, second] = value.trim().toLowerCase().split("_");
+    const finalOutput = first + second.replace(second[0], second[0].toUpperCase())
+    console.log(finalOutput)
   }
-  // console.log(list)
 })
