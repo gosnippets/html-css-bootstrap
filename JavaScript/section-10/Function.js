@@ -150,10 +150,10 @@ function callBackExample(numArray) {
     return newArray
 }
 function getEvenNumber(fn) {
-    return fn;
+    return fn(numArray2);
 }
 
-const abc = getEvenNumber(callBackExample(numArray2))
+const abc = getEvenNumber(callBackExample)
 console.log(abc)
 
 // Function Accepting Callback Functions
