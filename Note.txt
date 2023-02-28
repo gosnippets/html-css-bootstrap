@@ -1,0 +1,61 @@
+Bootstrap-5:
+
+1. Text/Typography
+2. Text Colors/Background Colors
+3. Images
+4. Alerts
+5. Buttons
+6. Button Groups
+7. Badges
+8. Progress Bars
+9. Spinners
+10. Pagination
+
+toString, concat, sort
+
+
+setIntervel, setTimeout
+if condition
+Loop (for, for in, for of, forEach, while, do while)
+
+
+Events:
+ onload
+ onchange
+ onclick
+ onfocus
+ onsubmit
+ onreset
+
+
+DOM(Document Object Model) : Allows Javascript to access HTML elements and styles to manipulate them.
+Guess my number!
+Modal
+Pig Game
+
+Destructuring Objects
+Destructuring Arrays
+Spread Operator
+Rest Pattern and Parameters(const [a,b,...others]=[1,2,3,4])
+Short Circuiting (&& and ||)
+Nullish Coalescing Operator (??)
+Logical Assignment Operators
+
+Sets
+Maps
+String 
+this Keyword
+
+# Section 10
+Function
+Default Parameters in function 
+Passing by value/Passing by reference
+
+First Class and High-Order Function
+Function Accepting Callback Functions
+Function Returning Functions 
+Call, Apply and Bind Methods
+
+
+
+
