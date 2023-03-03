@@ -310,44 +310,126 @@
 
 // Bind Method
 // 1
-const person = { firstName: "Ravi", lastName: 'Raushan' }
-function greetFunction() {
-    console.log("Hello", this.firstName, this.lastName);
-}
+// const person = { firstName: "Ravi", lastName: 'Raushan' }
+// function greetFunction() {
+//     console.log("Hello", this.firstName, this.lastName);
+// }
 
-const greetPerson = greetFunction.bind(person)
-greetFunction(); // undefined
-greetPerson();
+// const greetPerson = greetFunction.bind(person)
+// greetFunction(); // undefined
+// greetPerson();
 
-// 2
-function multiply(a, b) {
-    console.log('a=',a,'b=', b)
-    return a * b;
-}
+// // 2
+// function multiply(a, b) {
+//     console.log('a=',a,'b=', b)
+//     return a * b;
+// }
 
-const double = multiply.bind(null, 2)
-console.log(double(5))
-console.log(double(10))
-// console.log(multiply(2, 5))
+// const double = multiply.bind(null, 2)
+// console.log(double(5))
+// console.log(double(10))
+// // console.log(multiply(2, 5))
+
+// // 3
+// const studentObj = {
+//     name: 'Shyam',
+//     branch: 'CSE',
+//     studentDetails: function (age) {
+//         console.log("Name=", this.name, "Age=", age, "Branch=", this.branch)
+//     }
+// }
+
+// const getStudentDetails = studentObj.studentDetails.bind(studentObj, 32)
+// getStudentDetails()
+
+// // 4
+// const personObj = {
+//     name: 'Shyam',
+//     getPerson: function(greeting){
+//         console.log(greeting, this.name)
+//     }
+// }
+// const person2 = personObj.getPerson.bind(personObj,'Hi');
+// person2()
+
+// # Immediately Invoked Function Expressions (IIFE)
+// function greet() {
+//     console.log("Hello Ram")
+// }
+
+// // greet()
+
+// (function () {
+//     console.log("Hello Shyam")
+//     greet();
+// })();
+
+// (() => { console.log("Hello World!") })();
+
+// {
+//     const isPrivate = 10;
+//     var notPrivate = 20
+//     let private = 30
+// }
+
+// console.log(isPrivate) // isPrivate is not defined
+// console.log(notPrivate) // 20
+// console.log(private) // private is not defined
+
+// # Closures
+// 1
+// function count() {
+//     let count = 0;
+
+//     return function () {
+//         count++;
+//         console.log("Count =", count)
+//     }
+// }
+
+// const counter = count()
+// counter()
+// counter()
+// counter()
+// counter()
+
+// // 2
+// function multiply() {
+//     let multiplyBy = 10
+//     let count = 0;
+
+//     return function () {
+//         count++;
+//         console.log("Multiply =", multiplyBy * count)
+//     }
+// }
+
+// const multiple = multiply()
+// multiple()
+// multiple()
+// multiple()
 
 // 3
-const studentObj = {
-    name: 'Shyam',
-    branch: 'CSE',
-    studentDetails: function (age) {
-        console.log("Name=", this.name, "Age=", age, "Branch=", this.branch)
-    }
-}
+// function abc() {
+//     let a = 10
+//     return function () {
+//         a = 20;
+//         console.log(a)
+//     }
+// }
 
-const getStudentDetails = studentObj.studentDetails.bind(studentObj, 32)
-getStudentDetails()
+// const abcFn = abc()
+// abcFn()
 
 // 4
-const personObj = {
-    name: 'Shyam',
-    getPerson: function(greeting){
-        console.log(greeting, this.name)
+let e = 100;
+function sum(a) {
+    return function (b) {
+        return function (c) {
+            return function (d) {
+                return a + b + c + d + e;
+            }
+        }
     }
 }
-const person2 = personObj.getPerson.bind(personObj,'Hi');
-person2()
+console.log(sum(10)(20)(30)(40))

@@ -55,6 +55,8 @@ First Class and High-Order Function
 Function Accepting Callback Functions
 Function Returning Functions 
 Call, Apply and Bind Methods
+Immediately Invoked Function Expressions (IIFE)
+Closures
 
 
 
