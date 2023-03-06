@@ -30,7 +30,14 @@ BONUS TEST DATA 2: [1, 5, 3, 9, 6, 1]
 
 GOOD LUCK 😀
 */
+const poll2 = {
+  question: 'What is your favourite programming language?',
+  options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
+  // This generates [0, 0, 0, 0]
+  answers: new Array(4).fill(0)
+}
 
+// Solutions
 const poll = {
   question: 'What is your favourite programming language?',
   options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
@@ -59,12 +66,14 @@ const poll = {
 
 document.querySelector(".poll").addEventListener("click", poll.registerNewAnswer.bind(poll))
 
+console.log("Call Method")
 poll.displayResults.call({answers : [5, 2, 3]}, 'array')
 poll.displayResults.call({answers : [5, 2, 3]}, 'string')
 poll.displayResults.call({answers : [1, 5, 3, 9, 6, 1]}, 'string')
 poll.displayResults.call({answers : [1, 5, 3, 9, 6, 1]})
 poll.displayResults.call({answers : [10,2,5,8]}, 'string')
 
+console.log("Apply Method")
 poll.displayResults.apply({answers : [5, 2, 3]}, ['array'])
 poll.displayResults.apply({answers : [5, 2, 3]}, ['string'])
 poll.displayResults.apply({answers : [1, 5, 3, 9, 6, 1]}, ['string'])

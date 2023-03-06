@@ -432,4 +432,28 @@ function sum(a) {
         }
     }
 }
-console.log(sum(10)(20)(30)(40))
+console.log(sum(10)(20)(30)(50))
+
+// =========================
+
+function greet(){
+    console.log("Hello World!")
+}
+
+// greet()
+
+(function(){
+    console.log("Hello World!")
+})()
+
+function counter(){
+    let count = 0;
+    return function(){
+        console.log("Count:",count++)
+    }
+}
+
+const count = counter();
+count()
+count()
+count()
