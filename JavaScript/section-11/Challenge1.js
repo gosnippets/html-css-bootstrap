@@ -17,3 +17,28 @@ TEST DATA 2: Julia's data [9, 16, 6, 8, 3], Kate's data [10, 5, 6, 1, 4]
 
 GOOD LUCK 😀
 */
+
+// Solutions
+const juliasData = [3, 5, 2, 12, 7];
+const katesData = [4, 1, 15, 8, 3];
+
+const checkDogs = function (dogsJulia, dogsKate) {
+    const dogsJuliaCorrected = dogsJulia
+    dogsJuliaCorrected.splice(-2)
+
+    const dogs = [...dogsJuliaCorrected, ...dogsKate]
+    // const dogs = dogsJuliaCorrected.concat(dogsKate)
+
+    console.log(dogs)
+
+    dogs.forEach((age, index) => {
+        if (age >= 3) {
+            console.log(`Dog number ${index + 1} is an adult, and is ${age} years old`)
+        } else {
+            console.log(`Dog number ${index + 1} is still a puppy 🐶`)
+        }
+    })
+}
+
+checkDogs(juliasData, katesData)
+checkDogs([9, 16, 6, 8, 3], [10, 5, 6, 1, 4])
