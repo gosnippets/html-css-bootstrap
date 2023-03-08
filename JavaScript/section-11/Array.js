@@ -36,6 +36,14 @@ for (let el of arry) {
     console.log(el)
 }
 
-arry.forEach((value, index)=>{
+arry.forEach((value, index) => {
     console.log(index, value)
 })
+
+
+// Chaining Methods
+
+const num = [1, 4, 6, 8, 10, 11, 15]
+const newArray = num.filter((value) => value % 2 === 0).reduce((total, value)=>total+value)
+console.log(newArray)
+
