@@ -44,11 +44,35 @@ console.log(dogs)
 const dogSarah = dogs.find(dog => dog.owners.includes("Sarah"))
 console.log(dogSarah)
 
-console.log(`Sarah's dog is eating too ${dogSarah.curFood > dogSarah.recFood? "much": "little"}`)
+console.log(`Sarah's dog is eating too ${dogSarah.curFood > dogSarah.recFood ? "much" : "little"}`)
 
 // 3
-const ownersEatTooMuch = dogs.filter(dog=> dog.curFood > dog.recFood)
-console.log(ownersEatTooMuch);
+const ownersEatTooMuch = dogs.filter(dog => dog.curFood > dog.recFood)
+  .flatMap((value) => value.owners)
+console.log("ownersEatTooMuch", ownersEatTooMuch);
 
-const ownersEatTooLittle = dogs.filter(dog=> dog.curFood < dog.recFood)
-console.log(ownersEatTooLittle)
+const ownersEatTooLittle = dogs.filter(dog => dog.curFood < dog.recFood)
+  .flatMap((value) => value.owners)
+console.log("ownersEatTooLittle", ownersEatTooLittle)
+
+// 4
+console.log(ownersEatTooMuch.join(" and ") + "'s dogs eat too much!")
+console.log(ownersEatTooLittle.join(" and ") + "'s dogs eat too little!")
+
+// 5
+console.log(dogs.some((value) => value.curFood === value.recFood)) // false
+
+// 6
+// current > (recommended * 0.90) && current < (recommended * 1.10)
+const checkEatingOkay = dog => dog.curFood > (dog.recFood * 0.90) && dog.curFood < (dog.recFood * 1.10)
+
+// console.log(checkEatingOkay(dogs[3]))
+console.log(dogs.some(checkEatingOkay))
+
+// 7
+const newDogEatingOkay = dogs.filter(checkEatingOkay)
+console.log(newDogEatingOkay)
+
+// 8
+const sortedDogs = dogs.slice().sort((a, b) => a.recFood - b.recFood)
+console.log(sortedDogs, dogs)

@@ -44,6 +44,20 @@ arry.forEach((value, index) => {
 // Chaining Methods
 
 const num = [1, 4, 6, 8, 10, 11, 15]
-const newArray = num.filter((value) => value % 2 === 0).reduce((total, value)=>total+value)
+const newArray = num.filter((value) => value % 2 === 0).reduce((total, value) => total + value)
 console.log(newArray)
 
+// flat and flatMap
+const alphArray = ['a', 'b', 'c', ['d', 'e'], ['f']] 
+console.log(alphArray)
+console.log(alphArray.flat()) // ['a', 'b', 'c', 'd', 'e', 'f'] 
+
+
+const alphArray2 = ['a', 'b', 'c', ['d', ['e']], ['f']] 
+console.log(alphArray2.flat(2)) // ['a', 'b', 'c', 'd', 'e', 'f'] 
+
+const newAlphArray = alphArray.map((value)=>value==='a'? 'g': value).flat();
+console.log("newAlphArray", newAlphArray)
+
+const newarray = alphArray.flatMap((value)=>value==='a'? 'g': value)
+console.log("New Array", newarray)
