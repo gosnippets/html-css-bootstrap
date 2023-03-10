@@ -59,5 +59,14 @@ Immediately Invoked Function Expressions (IIFE)
 Closures
 
 
+# Section 11
+Array 
+
+
+# Section 12
+Numbers
+Dates
+Intl (Internationalizing Number)
+Timers
 
 

@@ -61,6 +61,8 @@ console.log(ownersEatTooLittle.join(" and ") + "'s dogs eat too little!")
 
 // 5
 console.log(dogs.some((value) => value.curFood === value.recFood)) // false
+// some : if any of the condition is satisfying then it will return true.
+// every: each and every condition should be satisfying then it will return true
 
 // 6
 // current > (recommended * 0.90) && current < (recommended * 1.10)
@@ -76,3 +78,6 @@ console.log(newDogEatingOkay)
 // 8
 const sortedDogs = dogs.slice().sort((a, b) => a.recFood - b.recFood)
 console.log(sortedDogs, dogs)
+
+const names = ["ram", "shyam","ravi", "surya"]
+console.log(names.sort())
