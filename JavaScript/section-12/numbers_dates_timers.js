@@ -95,18 +95,18 @@
 // console.log(typeof parseInt(abc))
 
 // Dates 
-console.log(new Date('2022 03 27 13:03:44'))
-const date1 = new Date('2022 03 27 13:03:44');
-const date2 = new Date();
-const date3 = new Date();
-console.log(date2, date3)
-console.log(date2 >= date3)
+// console.log(new Date('2022 03 27 13:03:44'))
+// const date1 = new Date('2022 03 27 13:03:44');
+// const date2 = new Date();
+// const date3 = new Date();
+// console.log(date2, date3)
+// console.log(date2 >= date3)
 
-if (date1 > new Date()) {
-    console.log("Future Date")
-} else {
-    console.log("Past date")
-}
+// if (date1 > new Date()) {
+//     console.log("Future Date")
+// } else {
+//     console.log("Past date")
+// }
 
 // console.log(date1.getFullYear())
 // console.log(date1.getMonth())
@@ -123,26 +123,77 @@ if (date1 > new Date()) {
 // console.log(Date.now())
 // console.log(new Date(1678764949247))
 
-const calcDaysPassed = (date1, date2) => {
-    return (date2 - date1) / (1000 * 60 * 60 * 24);
+// const h2El = document.querySelector("h2");
+
+// setInterval(() => {
+//     h2El.textContent = new Date()
+// }, 1000)
+
+// let num = 20;
+// console.log(num)
+
+// setTimeout(() => {
+//     num = 50;
+//     console.log(num)
+// }, 5000)
+
+const calcDaysPassed = (postedDate) => {
+    const currentDate = new Date()
+    return (new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate()) - postedDate) / (1000 * 60 * 60 * 24);
 }
-console.log(calcDaysPassed(new Date(2024, 3, 4), new Date(2024, 3, 24)))
 
 // const date1 = new Date('2020 03 27 13:03:44');
 // 25  = 25 days
 // 65  = 2 month and 5 days
 // 366 = 1 years and 1 day
 
-const h2El = document.querySelector("h2");
+function getPostedDate(postedDate) {
+    let formatDate = "";
+    let totalDays = calcDaysPassed(postedDate);
+    console.log("TotalDays", totalDays)
+    if (totalDays >= 365) {
+        let year = Math.floor(totalDays / 365)
+        formatDate = year + " years "
+        totalDays = totalDays % 365
+    }
 
-setInterval(() => {
-    h2El.textContent = new Date()
-}, 1000)
+    if (totalDays >= 30) {
+        let month = Math.floor(totalDays / 30)
+        formatDate += month + " months "
+        totalDays = totalDays % 30
+    }
 
-let num = 20;
-console.log(num)
+    if (totalDays < 30 && totalDays > 0) {
+        formatDate += totalDays + " days "
+    }
+    console.log(formatDate)
 
-setTimeout(() => {
-    num = 50;
-    console.log(num)
-}, 5000)
+}
+
+getPostedDate(new Date(2023, 1, 10))
+
+// Internationalizing Dates (Intl)
+const newDate = new Date();
+const options = {
+    hour: 'numeric',
+    minute: 'numeric',
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    weekday: 'long'
+}
+const intlDate = new Intl.DateTimeFormat("en-IN", options).format(newDate);
+console.log("DateTime", intlDate)
+
+// Internationalizing numbers (Intl)
+
+const num = 20037745874.20;
+const options2 = {
+    style: 'currency',
+    unit: 'celsius',
+    currency: 'EUR'
+}
+const currentLang = navigator.language;
+console.log(currentLang)
+const intlNumber = new Intl.NumberFormat(currentLang, options2).format(num)
+console.log("intlNumber", intlNumber)
