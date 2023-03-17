@@ -176,7 +176,7 @@ getPostedDate(new Date(2023, 1, 10))
 const newDate = new Date();
 const options = {
     hour: 'numeric',
-    minute: 'numeric',
+    minute: 'numeric',    
     day: 'numeric',
     month: 'long',
     year: 'numeric',
@@ -187,13 +187,12 @@ console.log("DateTime", intlDate)
 
 // Internationalizing numbers (Intl)
 
-const num = 20037745874.20;
+const num = 20037745874.2045456;
 const options2 = {
     style: 'currency',
-    unit: 'celsius',
-    currency: 'EUR'
+    currency: 'INR'
 }
 const currentLang = navigator.language;
 console.log(currentLang)
-const intlNumber = new Intl.NumberFormat(currentLang, options2).format(num)
+const intlNumber = new Intl.NumberFormat('en-IN', options2).format(num)
 console.log("intlNumber", intlNumber)
