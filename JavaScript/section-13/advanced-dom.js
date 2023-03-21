@@ -53,38 +53,38 @@
 // console.log(btnEl.name)
 // console.log(btnEl.classList)
 
-const imgEl = document.createElement("img")
-console.log(imgEl)
-imgEl.src ="https://dummyimage.com/640x360/fff/aaa2"
-imgEl.alt = "Placeholder Image"
+// const imgEl = document.createElement("img")
+// console.log(imgEl)
+// imgEl.src ="https://dummyimage.com/640x360/fff/aaa2"
+// imgEl.alt = "Placeholder Image"
 
-imgEl.style.height ="200px";
-imgEl.style.width = "300px"
-imgEl.style.border ="2px solid red"
+// imgEl.style.height ="200px";
+// imgEl.style.width = "300px"
+// imgEl.style.border ="2px solid red"
 
-imgEl.classList.add("img", "img2")
-imgEl.classList.remove("img2")
+// imgEl.classList.add("img", "img2")
+// imgEl.classList.remove("img2")
 
-document.body.appendChild(imgEl)
+// document.body.appendChild(imgEl)
 
-imgEl.addEventListener("mouseenter", function(){
-    imgEl.style.border ="2px solid green"
-})
+// imgEl.addEventListener("mouseenter", function(){
+//     imgEl.style.border ="2px solid green"
+// })
 
-imgEl.addEventListener("mouse", function(){
-    imgEl.style.border ="2px solid red"
-})
+// imgEl.addEventListener("mouse", function(){
+//     imgEl.style.border ="2px solid red"
+// })
 
-// ============================
-const linkEl = document.createElement("a")
-linkEl.textContent = "Click here"
-linkEl.href = "#"
-linkEl.target ="_blank"
+// // ============================
+// const linkEl = document.createElement("a")
+// linkEl.textContent = "Click here"
+// linkEl.href = "#"
+// linkEl.target ="_blank"
 
-linkEl.classList.add("link")
+// linkEl.classList.add("link")
 
-linkEl.style.color = "green"
-document.body.appendChild(linkEl)
+// linkEl.style.color = "green"
+// document.body.appendChild(linkEl)
 
 // create div element
 // add height, width, backgroundcolor, border, shadow 
@@ -98,3 +98,40 @@ document.body.appendChild(linkEl)
 // 4. mousemove
 
 // Create modal popup design with HTML and CSS
+
+const mainEl = document.querySelector("#main")
+// console.log(mainEl);
+// console.log(mainEl.childNodes)
+// console.log(mainEl.children)
+// mainEl.firstElementChild.style.border= "2px solid green";
+// mainEl.lastElementChild.style.border= "2px solid blue";
+// console.log(mainEl.lastElementChild)
+
+// console.log(mainEl.parentNode)
+// console.log(mainEl.parentElement)
+// console.log(mainEl.closest(".closest"))
+
+// console.log(mainEl.nextElementSibling)
+// console.log(mainEl.previousElementSibling)
+
+// console.log(mainEl.previousSibling)
+// console.log(mainEl.nextSibling)
+
+const allBtn = mainEl.children
+const parentEl = mainEl.parentElement.children
+console.log(...allBtn)
+console.log(...mainEl.parentElement.children)
+
+for(let el of allBtn){
+    el.style.border = "5px solid green"
+    console.log(el)
+}
+
+for(let el of parentEl){
+    console.log(el)
+}
+
+
+// Scroll Example
+// Sticky Navigation 
+// Lifecycle of DOM events  

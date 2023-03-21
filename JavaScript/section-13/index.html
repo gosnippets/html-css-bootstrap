@@ -25,12 +25,40 @@
     </style>
   </head>
   <body>
-    <h2 class="heading-2" id="heading-2"><p>Child Heading 1</p></h2>
+    <!-- <h2 class="heading-2" id="heading-2"><p>Child Heading 1</p></h2>
     <h2 class="heading-2">Heading 2</h2>
     <h2 class="heading-3">Heading 2</h2>
 
     <div id="showDiv"></div>
-    <button>Click Here</button>
+    <button>Click Here</button> -->
+<div class="closest">
+  
+    <div id="parent" >
+      <div class="previousElementSibling"></div>
+
+      <p id="main">
+        <button id="childBtn"><span>Click here</span></button>
+        <button id="childBtn1"><span>Button</span></button>
+        <button id="childBtn2" class="closest"><span>Button</span></button>
+        <button id="childBtn3"><span>Button</span></button>
+      </p>
+
+      <p id="main2">
+        <button class="childBtn"><span>Click here</span></button>
+        <button class="childBtn1"><span>Button</span></button>
+        <button class="childBtn2"><span>Button</span></button>
+        <button class="childBtn3"><span>Button</span></button>
+      </p>
+
+      <p id="main3">
+        <button class="childBtn"><span>Click here</span></button>
+        <button class="childBtn1"><span>Button</span></button>
+        <button class="childBtn2"><span>Button</span></button>
+        <button class="childBtn3"><span>Button</span></button>
+      </p>
+    </div>
+    <div class="closest"></div>
+  </div>
 
     <script src="./advanced-dom.js"></script>
   </body>
