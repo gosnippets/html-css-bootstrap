@@ -99,7 +99,7 @@
 
 // Create modal popup design with HTML and CSS
 
-const mainEl = document.querySelector("#main")
+// const mainEl = document.querySelector("#main")
 // console.log(mainEl);
 // console.log(mainEl.childNodes)
 // console.log(mainEl.children)
@@ -117,21 +117,111 @@ const mainEl = document.querySelector("#main")
 // console.log(mainEl.previousSibling)
 // console.log(mainEl.nextSibling)
 
-const allBtn = mainEl.children
-const parentEl = mainEl.parentElement.children
-console.log(...allBtn)
-console.log(...mainEl.parentElement.children)
+// const allBtn = mainEl.children
+// const parentEl = mainEl.parentElement.children
+// console.log(...allBtn)
+// console.log(...mainEl.parentElement.children)
 
-for(let el of allBtn){
-    el.style.border = "5px solid green"
-    console.log(el)
-}
+// for(let el of allBtn){
+//     el.style.border = "5px solid green"
+//     console.log(el)
+// }
 
-for(let el of parentEl){
-    console.log(el)
-}
+// for(let el of parentEl){
+//     console.log(el)
+// }
 
 
 // Scroll Example
 // Sticky Navigation 
 // Lifecycle of DOM events  
+
+const myDivEl = document.querySelector("#myDiv");
+console.log(myDivEl)
+console.log(myDivEl.childNodes)
+console.log(myDivEl.children)
+console.log(myDivEl.firstElementChild)
+console.log(myDivEl.lastElementChild)
+myDivEl.firstElementChild.style.border = "5px solid red"
+myDivEl.lastElementChild.style.border = "5px solid blue"
+
+console.log(document.body.parentElement)
+console.log(document.body.parentNode)
+const html = document.body.parentElement
+console.log(html.parentElement);
+console.log(html.parentNode)
+
+console.log(myDivEl.closest(".div1"))
+console.log(myDivEl.previousElementSibling)
+console.log(myDivEl.nextElementSibling)
+
+const allBtn = myDivEl.children
+for (let btnEl of allBtn) {
+    btnEl.style.border = "5px solid red"
+}
+
+const newBtnEl = document.createElement("button")
+newBtnEl.textContent = "Button 5"
+newBtnEl.classList.add("btn", "btn5")
+console.log(newBtnEl)
+myDivEl.appendChild(newBtnEl)
+
+// Lifecycle of DOM Element 
+// 1. DOMContentLoaded
+// 2. load
+// 3. beforeunload
+
+// window.addEventListener("DOMContentLoaded", function (e) {
+//     console.log("DOMContentLoaded", e, myDivEl)
+//     this.alert("Hello")
+// })
+
+// window.addEventListener("load", function (e) {
+//     console.log("load", e, myDivEl)
+//     // this.alert("Page loaded")
+// })
+
+// window.addEventListener("beforeunload", function (e) {
+//     e.preventDefault();
+//     console.log("beforeunload", e)
+//     e.returnValue='';
+// })
+
+// Scroll example
+const scrollTopBtnEl = document.querySelector("#scroll-to-top")
+scrollTopBtnEl.addEventListener("click", function () {
+    // document.body.scrollTop = 0
+    // document.documentElement.scrollTop = 0
+
+    // window.scrollTo({
+    //     left: 0,
+    //     top: 0,
+    //     behavior: "smooth"
+    // })
+    document.body.scrollIntoView({ behavior: "smooth" })
+})
+
+const scrollNextEl = document.querySelector("#scrollNext")
+const sectionSecondEl = document.querySelector("#section-second")
+scrollNextEl.addEventListener("click", function () {
+    const sectionCoords = sectionSecondEl.getBoundingClientRect()
+    console.log(sectionCoords)
+    console.log("Current scroll", window.pageXOffset, window.pageYOffset)
+
+    // window.scrollTo({
+    //     left: sectionCoords.left,
+    //     top: sectionCoords.top,
+    //     behavior:"smooth"
+    // })
+
+    sectionSecondEl.scrollIntoView({ behavior: "smooth" })
+})
+
+function func1(event){
+    alert("Div1")
+}
+
+function func2(event){
+    alert("Div2")
+    event.stopPropagation()
+}

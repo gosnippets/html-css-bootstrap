@@ -22,43 +22,61 @@
         -webkit-border-radius: 25px;
         border-radius: 25px;
       }
+      .scroll-top {
+        /* display: none; */
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        cursor: pointer;
+        border-radius: 35px;
+        color: #fff;
+        background-color: red;
+        border:none;
+        padding: 10px;
+      }
+      .scroll-top:hover {
+        background-color: green;
+      }
+      .div2 {
+        padding: 50px;
+        background-color: rgba(255, 0, 0,0.2);
+        text-align: center;
+        cursor: pointer;
+      }
     </style>
   </head>
   <body>
-    <!-- <h2 class="heading-2" id="heading-2"><p>Child Heading 1</p></h2>
-    <h2 class="heading-2">Heading 2</h2>
-    <h2 class="heading-3">Heading 2</h2>
+    <section class="div1" style="height: 100vh;">
+      <div class="div">
+        <div class="div2">
+          <span>Previous Element1</span>
+          <span>Previous Element2</span>
+          <span>Previous Element3</span>
+          <div id="myDiv">
+            <button class="btn btn1">Button 1</button>
+            <button class="btn btn2">Button 2</button>
+            <button class="btn btn3">Button 3</button>
+            <button class="btn btn4">Button 4</button>
+          </div>
+          <div id="myDiv1">
+            <button class="btn btn1">Button 1</button>
+            <button class="btn btn2">Button 2</button>
+            <button class="btn btn3">Button 3</button>
+            <button class="btn btn4">Button 4</button>
+          </div>
+          <span>Next Element</span>
+          <button id="scrollNext" class="btn btn5">Scroll Next</button>
+        </div>
+      </div>
+    </section>
 
-    <div id="showDiv"></div>
-    <button>Click Here</button> -->
-<div class="closest">
-  
-    <div id="parent" >
-      <div class="previousElementSibling"></div>
-
-      <p id="main">
-        <button id="childBtn"><span>Click here</span></button>
-        <button id="childBtn1"><span>Button</span></button>
-        <button id="childBtn2" class="closest"><span>Button</span></button>
-        <button id="childBtn3"><span>Button</span></button>
-      </p>
-
-      <p id="main2">
-        <button class="childBtn"><span>Click here</span></button>
-        <button class="childBtn1"><span>Button</span></button>
-        <button class="childBtn2"><span>Button</span></button>
-        <button class="childBtn3"><span>Button</span></button>
-      </p>
-
-      <p id="main3">
-        <button class="childBtn"><span>Click here</span></button>
-        <button class="childBtn1"><span>Button</span></button>
-        <button class="childBtn2"><span>Button</span></button>
-        <button class="childBtn3"><span>Button</span></button>
-      </p>
-    </div>
-    <div class="closest"></div>
-  </div>
+    <section id="section-second" style="width: 1700px;height: 100vh; background-color: blueviolet;">
+      <div>This is Text. This is Text. This is Text. This is Text. </div>
+      <div class="div2" onclick="func1(event)"> DIV1
+        <div class="div2" onclick="func2(event)">DIV2</div>
+      </div>
+    </section>
+    <button id="scroll-to-top" class="scroll-top">Top</button>
 
     <script src="./advanced-dom.js"></script>
   </body>
