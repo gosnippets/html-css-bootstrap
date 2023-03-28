@@ -10,3 +10,48 @@ DATA CAR 1: 'Ford' going at 120 km/h
 
 GOOD LUCK 😀
 */
+
+class Cars {
+    constructor(make, speed) {
+        this.make = make
+        this.speed = speed
+    }
+
+    accelerate() {
+        this.speed = this.speed + 10;
+        console.log(`'${this.make}' going at ${this.speed} km/h`)
+    }
+
+    brake() {
+        this.speed = this.speed - 5;
+        console.log(`'${this.make}' going at ${this.speed} km/h`)
+    }
+
+
+    get speedUS() {
+        return this.speed / 1.6 // convert from km/h to mi/h
+    }
+
+    set speedUS(speed) {
+        this.speed = speed * 1.6  // convert from mi/h to km/h
+    }
+
+}
+
+const car1 = new Cars("BMW", 150) // 150 km
+const car2 = new Cars("Ford", 120)
+console.log(car1)
+console.log(car1.speedUS)
+
+console.log("BMW")
+car1.accelerate()
+car1.accelerate()
+car1.brake();
+car1.brake();
+
+console.log("Ford")
+car2.speedUS = 125 // mi
+car2.accelerate()
+car2.accelerate()
+car2.brake();
+car2.brake();

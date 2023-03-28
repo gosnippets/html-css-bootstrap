@@ -11,3 +11,35 @@ DATA CAR 2: 'Mercedes' going at 95 km/h
 
 GOOD LUCK 😀
 */
+
+const Cars = function (make, speed) {
+    this.make = make
+    this.speed = speed
+}
+
+Cars.prototype.accelerate = function () {
+    this.speed = this.speed + 10;
+    console.log(`'${this.make}' going at ${this.speed} km/h`)
+}
+
+Cars.prototype.break = function () {
+    this.speed = this.speed - 5;
+    console.log(`'${this.make}' going at ${this.speed} km/h`)
+}
+
+const car1 = new Cars("BMW", 150);
+const car2 = new Cars("Mercedes", 130);
+
+console.log("BMW")
+car1.accelerate();
+car1.accelerate();
+car1.break();
+car1.break();
+car1.break();
+
+console.log("Mercedes")
+car2.accelerate();
+car2.accelerate();
+car2.break();
+car2.break();
+car2.break();

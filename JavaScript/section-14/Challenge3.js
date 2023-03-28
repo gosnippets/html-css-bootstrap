@@ -10,3 +10,41 @@ DATA CAR 1: 'Tesla' going at 120 km/h, with a charge of 23%
 
 GOOD LUCK 😀
 */
+
+const Cars = function (make, speed) {
+    this.make = make
+    this.speed = speed
+}
+
+Cars.prototype.accelerate = function () {
+    this.speed = this.speed + 10;
+    console.log(`'${this.make}' going at ${this.speed} km/h`)
+}
+
+Cars.prototype.break = function () {
+    this.speed = this.speed - 5;
+    console.log(`'${this.make}' going at ${this.speed} km/h`)
+}
+
+const EV = function (make, speed, charge) {
+    Cars.call(this, make, speed);
+    this.charge = charge;
+}
+
+EV.prototype = Object.create(Cars.prototype)
+EV.prototype.chargeBattery = function (chargeTo) {
+    this.charge = chargeTo
+}
+
+EV.prototype.accelerate = function () {
+    this.speed = this.speed + 20;
+    this.charge = this.charge - 1
+    console.log(`${this.make} going at ${this.speed} km/h, with a charge of ${this.charge}%`)
+}
+
+const car1= new EV("Tesla", 120, 40);
+console.log(car1)
+car1.chargeBattery(90)
+car1.accelerate()
+car1.break()
+
