@@ -205,49 +205,127 @@
 // student.getPersonDetials()
 
 // Inheritance in class 
-class PersonCl {
-    constructor(firstName, birthYear) {
-        this.firstName = firstName;
-        this.birthYear = birthYear
-        console.log("FirstName", firstName, birthYear)
+// class PersonCl {
+//     constructor(firstName, birthYear) {
+//         this.firstName = firstName;
+//         this.birthYear = birthYear
+//         console.log("FirstName", firstName, birthYear)
+//     }
+
+//     calcAge() {
+//         console.log("Age", 2023 - this.birthYear)
+//     }
+
+// get firstName() {
+//     return this._firstName
+// }
+
+// get birthYear() {
+//     return this._birthYear
+// }
+
+// set firstName(firstName) {
+//     this._firstName = firstName
+// }
+
+// set birthYear(birthYear) {
+//     this._birthYear = birthYear
+// }
+// }
+
+// class StudentCl extends PersonCl {
+//     constructor(firstName, birthYear, branch) {
+//         super(firstName, birthYear)
+//         this.branch = branch
+//     }
+
+//     introduce() {
+//         console.log(this)
+//         console.log(`My name is ${this.firstName} and my branch is ${this.branch}.`)
+//     }
+
+//     calcAge(){
+//         console.log(`I'm ${2023- this.birthYear} years old`)
+//     }
+// }
+// const student = new StudentCl("Ravi", 1995, "CSE");
+// student.introduce()
+// student.calcAge()
+
+
+// 1. Public fields
+// 2. Private fields
+// 3. Public Methods
+// 4. Private Methods
+
+// static methods
+
+class Account {
+    // Public fields
+    timestamp = new Date();
+
+    // Private fields
+    #amount = 1000;
+    #pin;
+
+    constructor(name, pin) {
+        this.name = name;
+        this.#pin = pin
+        console.log("Name", this.name, "Pin", this.#pin)
     }
 
-    calcAge() {
-        console.log("Age", 2023 - this.birthYear)
+    // Public methods
+    getAmount() {
+        return this.#amount;
     }
 
-    // get firstName() {
-    //     return this._firstName
-    // }
+    deposit(amount) {
+        this.#amount = this.#amount + amount
+        console.log(`Rs. ${amount} added successfully`)
+        return this;
+    }
 
-    // get birthYear() {
-    //     return this._birthYear
-    // }
+    withdraw(amount) {
+        this.#amount = this.#amount - amount
+        console.log(`Rs. ${amount} withdrawl successfully`)
+        return this
+    }
 
-    // set firstName(firstName) {
-    //     this._firstName = firstName
-    // }
+    requestLoan(amount) {
+        console.log(amount, this._approveLoan(amount))
+        if(this._approveLoan(amount)){
+            this.deposit(amount);
+            console.log("Loan amount is approved...")
+        }else {
+            console.log("Loan amount is not approved..")
+        }
+    }
 
-    // set birthYear(birthYear) {
-    //     this._birthYear = birthYear
-    // }
+    // Private methods
+    _approveLoan(amount) {
+        if (amount <= (this.#amount * 3)) return true
+        return false
+    }
+
+    // Static Methods
+    static getDate(){
+        console.log("Date", new Date())
+    }
 }
 
-class StudentCl extends PersonCl {
-    constructor(firstName, birthYear, branch) {
-        super(firstName, birthYear)
-        this.branch = branch
-    }
+const person = new Account("Surya", 1234)
+console.log(person.getAmount())
+console.log(person.getAmount())
+person.withdraw(1500)
+console.log(person.getAmount())
+person.requestLoan(30000)
 
-    introduce() {
-        console.log(this)
-        console.log(`My name is ${this.firstName} and my branch is ${this.branch}.`)
-    }
+Account.getDate()
 
-    calcAge(){
-        console.log(`I'm ${2023- this.birthYear} years old`)
-    }
-}
-const student = new StudentCl("Ravi", 1995, "CSE");
-student.introduce()
-student.calcAge()
+console.log(person.timestamp) // public field
+console.log(person.amount)
+
+console.log(person.getAmount())
+
+// Chaining Example
+person.deposit(2000).withdraw(1500).deposit(10000);
