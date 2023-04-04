@@ -107,53 +107,202 @@ console.log(requestUser)
 
 //     })
 
-const buttonEl = document.querySelector("button");
-const ulEl = document.querySelector("ul");
+// const buttonEl = document.querySelector("button");
+// const ulEl = document.querySelector("ul");
 
-buttonEl.addEventListener("click", function () {
-    fetch("https://jsonplaceholder.typicode.com/users")
-        .then(function (response) {
-            console.log(response)
-            if (!response.ok)
-                throw new Error("Something went wrong....")
+// buttonEl.addEventListener("click", function () {
+//     fetch("https://jsonplaceholder.typicode.com/users")
+//         .then(function (response) {
+//             console.log(response)
+//             if (!response.ok)
+//                 throw new Error("Something went wrong....")
 
-            return response.json()
-        })
-        .then(function (data) {
-            for (let user of data) {
-                const liEl = document.createElement("li");
-                liEl.textContent = user.id + ". " + user.name
-                ulEl.appendChild(liEl)
+//             return response.json()
+//         })
+//         .then(function (data) {
+//             for (let user of data) {
+//                 const liEl = document.createElement("li");
+//                 liEl.textContent = user.id + ". " + user.name
+//                 ulEl.appendChild(liEl)
+//             }
+
+//         })
+// })
+
+// fetch("https://jsonplaceholder.typicode.com/users")
+//     .then(function (response) {
+//         console.log(response)
+//         if (!response.ok)
+//             throw new Error("Error in calling all users API....")
+
+//         return response.json()
+//     })
+//     .then(function (data) {
+//         console.log(data)
+//         return fetch("https://jsonplaceholder.typicode.com/users/" + data[0].id)
+//     })
+//     .then(function (response) {
+//         console.log(response)
+//         if (!response.ok)
+//             throw new Error("Error in calling single user API....")
+
+//         return response.json()
+//     })
+//     .then(function (data) {
+//         console.log(data)
+//     })
+//     .catch(function (error) {
+//         console.error(error)
+//     })
+//     .finally(function () {
+//         console.log("Finally block calling...")
+//     })
+
+// ===============================================
+// POST Method 
+
+const headerData = {
+    method: 'POST',
+    body: {
+        "name": "Ravi Raushan",
+        "username": "ravi",
+        "email": "ravi@gmail.com",
+        "address": {
+            "street": "Kulas Light",
+            "suite": "Apt. 556",
+            "city": "Gwenborough",
+            "zipcode": "92998-3874",
+            "geo": {
+                "lat": "-37.3159",
+                "lng": "81.1496"
             }
+        },
+        "phone": "1-770-736-8031 x56442",
+        "website": "hildegard.org",
+        "company": {
+            "name": "Romaguera-Crona",
+            "catchPhrase": "Multi-layered client-server neural-net",
+            "bs": "harness real-time e-markets"
+        }
+    }
+}
 
-        })
-})
+// fetch("https://jsonplaceholder.typicode.com/users", headerData)
+// .then(function (response) {
+//     console.log(response)
+//     if (!response.ok)
+//         throw new Error("Error in calling all users API....")
 
-fetch("https://jsonplaceholder.typicode.com/users")
-    .then(function (response) {
-        console.log(response)
-        if (!response.ok)
-            throw new Error("Error in calling all users API....")
+//     return response.json()
+// })
+// .then(function (data) {
+//     console.log(data);
+//     alert("User added successfully...")
+// })
+// .catch(function (error) {
+//     console.error(error)
+// })
+// .finally(function () {
+//     console.log("Finally block calling...")
+// })
 
-        return response.json()
-    })
-    .then(function (data) {
-        console.log(data)
-        return fetch("https://jsonplaceholder.typicode.com/users/" + data[0].id)
-    })
-    .then(function (response) {
-        console.log(response)
-        if (!response.ok)
-            throw new Error("Error in calling single user API....")
 
-        return response.json()
-    })
-    .then(function (data) {
-        console.log(data)
-    })
-    .catch(function (error) {
-        console.error(error)
-    })
-    .finally(function () {
-        console.log("Finally block calling...")
-    })
+// fetch("https://jsonplaceholder.typicode.com/users", {
+//     method:"POST",
+//     body: {
+//         "name": "Ravi Raushan",
+//         "username": "ravi",
+//         "email": "ravi@gmail.com"
+//     }
+// })
+// .then(function (response) {
+//     console.log(response)
+//     if (!response.ok)
+//         throw new Error("Error in calling all users API....")
+
+//     return response.json()
+// })
+// .then(function (data) {
+//     console.log(data);
+//     alert("User added successfully...")
+// })
+// .catch(function (error) {
+//     console.error(error)
+// })
+// .finally(function () {
+//     console.log("Finally block calling...")
+// })
+
+// ========================================
+// Delete method 
+
+// fetch("https://jsonplaceholder.typicode.com/users/1", { method: "DELETE" })
+//     .then(function (response) {
+//         console.log(response)
+//         if (!response.ok)
+//             throw new Error("Error in calling all users API....")
+
+//         return response.json()
+//     })
+//     .then(function (data) {
+//         console.log(data);
+//         alert("User Deleted successfully...")
+//     })
+//     .catch(function (error) {
+//         console.error(error)
+//     })
+//     .finally(function () {
+//         console.log("Finally block calling...")
+//     })
+
+
+// console.log("Promise start")
+// setTimeout(() => console.log("0 second timer"), 0)
+// Promise.resolve("Resolved promise 1").then(res => {
+//     console.log(res)
+// })
+// Promise.resolve("Resolved promise 2").then(res => {
+//     for (let i = 0; i < 10000000; i++) { }
+//     console.log(res)
+// })
+// console.log("Promise end")
+
+// const isNumLessThanFive = new Promise(function (resolve, reject) {
+//     const randomNum = Math.floor(Math.random() * 10) + 1
+//     console.log(randomNum)
+//     setTimeout(() => {
+//         if (randomNum <= 5) {
+//             resolve("Number is less than 5")
+//         } else {
+//             reject(new Error("Number is greater than 5"))
+//         }
+//     }, 5000)
+// })
+// isNumLessThanFive.then(res => console.log(res))
+//     .catch(err => console.log(err))
+
+
+// const wait = function (second) {
+//     return new Promise(function (resolve) {
+//         setTimeout(resolve, second * 1000)
+//     })
+// }
+
+// wait(5).then(()=>{
+//     console.log("5 second passed")
+//     return wait(2)
+// })
+// .then(()=>{
+//     console.log("2 second passed")
+//     return wait(4)
+// })
+// .then(()=>{
+//     console.log("4 second passed")
+//     return wait(1)
+// })
+// .then(()=>{
+//     console.log("1 second passed")
+// })
+
+Promise.resolve("Resolved..").then(res=> console.log(res))
+Promise.reject(new Error("Error message..")).catch(error=> console.error(error))
