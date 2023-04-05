@@ -82,8 +82,8 @@
 // fulfilled
 // rejected
 
-const requestUser = fetch("https://jsonplaceholder.typicode.com/users")
-console.log(requestUser)
+// const requestUser = fetch("https://jsonplaceholder.typicode.com/users")
+// console.log(requestUser)
 
 // fetch("https://jsonplaceholder.typicode.com/userss")
 //     .then(function (response) {
@@ -304,5 +304,97 @@ const headerData = {
 //     console.log("1 second passed")
 // })
 
-Promise.resolve("Resolved..").then(res=> console.log(res))
-Promise.reject(new Error("Error message..")).catch(error=> console.error(error))
+// Promise.resolve("Resolved..").then(res=> console.log(res))
+// Promise.reject(new Error("Error message..")).catch(error=> console.error(error))
+
+// ============================================
+// async and await
+
+// const getUser = function (userID) {
+//     const userData = fetch("https://jsonplaceholder.typicode.com/users/" + userID)
+//     return userData;
+// }
+
+// const myFunc = function () {
+//     console.log("Async and await example...")
+//     const user = getUser(1)
+//     console.log("Response", user)
+//     console.log("MyFunc end")
+// }
+
+// myFunc()
+
+
+// async function myFunction() {
+//     console.log("Start")
+//     let myPromise = new Promise(function (resolve, reject) {
+//         resolve("Hello World!..")
+//     })
+//     const hello = await myPromise;
+//     console.log(hello)
+//     console.log("END")
+// }
+
+// console.log("Start func")
+// myFunction()
+// console.log("END func")
+
+// =============================================================
+
+function a() {
+    return "a"
+}
+
+function b() {
+    for (let i = 0; i < 1000000; i++) {
+        return "b"
+    }
+}
+
+function c() {
+    return "c"
+}
+
+const displayData = async function () {
+    const aData = a();
+    const bData = b();
+    const cData = c();
+
+    console.log(aData, bData, cData)
+
+    const data = await Promise.all([
+        a(),
+        b(),
+        c()
+    ])
+    console.log("Data", data)
+
+    const requestUser = await fetch("https://jsonplaceholder.typicode.com/users")
+    console.log(requestUser)
+}
+
+// displayData()
+
+// ===================================================
+
+Promise.all([
+    Promise.resolve("Success1"),
+    Promise.resolve("Success2"),
+    Promise.resolve("Success3"),    
+]).then(res=>console.log(res))
+.catch(error=>console.error(error))
+
+// Promise.all([
+//     Promise.resolve("Success1"),
+//     Promise.reject("Error.."),
+//     Promise.resolve("Success2"),    
+// ]).then(res=>console.log(res))
+// .catch(error=>console.error(error))
+
+
+// =================================
+Promise.allSettled([
+    Promise.resolve("Success1"),
+    Promise.reject("Error.."),
+    Promise.resolve("Success2"),    
+]).then(res=>console.log(res))
