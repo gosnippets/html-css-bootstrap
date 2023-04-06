@@ -341,48 +341,48 @@ const headerData = {
 
 // =============================================================
 
-function a() {
-    return "a"
-}
+// function a() {
+//     return "a"
+// }
 
-function b() {
-    for (let i = 0; i < 1000000; i++) {
-        return "b"
-    }
-}
+// function b() {
+//     for (let i = 0; i < 1000000; i++) {
+//         return "b"
+//     }
+// }
 
-function c() {
-    return "c"
-}
+// function c() {
+//     return "c"
+// }
 
-const displayData = async function () {
-    const aData = a();
-    const bData = b();
-    const cData = c();
+// const displayData = async function () {
+//     const aData = a();
+//     const bData = b();
+//     const cData = c();
 
-    console.log(aData, bData, cData)
+//     console.log(aData, bData, cData)
 
-    const data = await Promise.all([
-        a(),
-        b(),
-        c()
-    ])
-    console.log("Data", data)
+//     const data = await Promise.all([
+//         a(),
+//         b(),
+//         c()
+//     ])
+//     console.log("Data", data)
 
-    const requestUser = await fetch("https://jsonplaceholder.typicode.com/users")
-    console.log(requestUser)
-}
+//     const requestUser = await fetch("https://jsonplaceholder.typicode.com/users")
+//     console.log(requestUser)
+// }
 
 // displayData()
 
 // ===================================================
 
-Promise.all([
-    Promise.resolve("Success1"),
-    Promise.resolve("Success2"),
-    Promise.resolve("Success3"),    
-]).then(res=>console.log(res))
-.catch(error=>console.error(error))
+// Promise.all([
+//     Promise.resolve("Success1"),
+//     Promise.resolve("Success2"),
+//     Promise.resolve("Success3"),    
+// ]).then(res=>console.log(res))
+// .catch(error=>console.error(error))
 
 // Promise.all([
 //     Promise.resolve("Success1"),
@@ -393,8 +393,20 @@ Promise.all([
 
 
 // =================================
-Promise.allSettled([
-    Promise.resolve("Success1"),
-    Promise.reject("Error.."),
-    Promise.resolve("Success2"),    
-]).then(res=>console.log(res))
+// Promise.allSettled([
+//     Promise.resolve("Success1"),
+//     Promise.reject("Error.."),
+//     Promise.resolve("Success2"),    
+// ]).then(res=>console.log(res))
+
+// Race 
+
+const promise1 = new Promise((resolve, reject)=>{
+    setTimeout(()=> resolve, 4000, "Promise 1")
+})
+
+const promise2 = new Promise((resolve, reject)=>{
+    setTimeout(()=> resolve, 1000, "Promise 2")
+})
+
+Promise.race([promise1, promise2])
