@@ -401,12 +401,29 @@ const headerData = {
 
 // Race 
 
-const promise1 = new Promise((resolve, reject)=>{
-    setTimeout(()=> resolve, 4000, "Promise 1")
-})
+// const promise1 = new Promise((resolve, reject) => {
+//     setTimeout(resolve, 400, "Promise 1")
+// })
 
-const promise2 = new Promise((resolve, reject)=>{
-    setTimeout(()=> resolve, 1000, "Promise 2")
-})
+// const promise2 = new Promise((resolve, reject) => {
+//     setTimeout(resolve, 1000, "Promise 2")
+// })
 
-Promise.race([promise1, promise2])
+// const promise3 = new Promise((resolve, reject) => {
+//     setTimeout(resolve, 10, "Promise 3")
+// })
+
+// console.log("Race start")
+// Promise.race([promise1, promise2, promise3]).then((value) => {
+//     console.log("Response")
+//     console.log("Race:", value)
+// });
+// console.log("Race end")
+
+Promise.any([    
+    Promise.reject("Rejected"),
+    Promise.resolve("Success"),    
+    Promise.reject("Rejected"),
+    Promise.resolve("Success again"),
+]).then(res => console.log(res))
+    .catch(err => console.error(err))

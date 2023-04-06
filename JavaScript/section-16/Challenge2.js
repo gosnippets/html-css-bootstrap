@@ -21,3 +21,39 @@ TEST DATA: Images in the img folder. Test the error handler by passing a wrong i
 
 GOOD LUCK 😀
 */
+
+// Solutions 
+
+const wait = function (sec) {
+    return new Promise(function (resolve, reject) {
+        setTimeout(resolve, sec * 1000)
+    })
+}
+
+const imgContainer = document.querySelector(".images")
+const createImage = function (imgPath) {
+    return new Promise(function (resolve, reject) {
+        const imgEl = document.createElement("img");
+        imgEl.src = imgPath
+
+        imgEl.addEventListener("load", function () {
+            imgContainer.append(imgEl)
+            resolve(imgEl)
+        })
+
+        imgEl.addEventListener("error", function () {
+            reject(new Error("Image not found...."))
+        })
+    })
+}
+
+let currentImgEl;
+
+createImage('https://picsum.photos/200').then((img) => {
+    console.log(img);
+    currentImgEl = img;
+    return wait(2)
+}).then(()=>{
+    currentImgEl.style.display = "none"
+
+})

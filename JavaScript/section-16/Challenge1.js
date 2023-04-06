@@ -23,3 +23,27 @@ TEST COORDINATES 2: -33.933, 18.474
 
 GOOD LUCK 😀
 */
+
+// Solutions 
+
+const getSingleUser = function (id) {
+    fetch('https://jsonplaceholder.typicode.com/users').then((res => {
+        if (!res.ok) throw new Error("Something went wrong")
+
+        return res.json()
+    })).then((data => {
+        console.log(data);
+
+        return fetch('https://jsonplaceholder.typicode.com/users/' + id)
+    })).then((res => {
+        if (!res.ok) throw new Error("Something went wrong")
+
+        return res.json()
+    })).then((data => {
+        console.log(data)
+    })).catch(err => console.error("Error:", err))
+}
+
+getSingleUser(2)
+getSingleUser(4)
+getSingleUser(5)
