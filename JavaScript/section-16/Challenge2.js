@@ -49,11 +49,22 @@ const createImage = function (imgPath) {
 
 let currentImgEl;
 
-createImage('https://picsum.photos/200').then((img) => {
+createImage('./img/img-1.jpg').then((img) => {
     console.log(img);
     currentImgEl = img;
+    console.log("Image 1 is loaded")
     return wait(2)
 }).then(()=>{
     currentImgEl.style.display = "none"
-
+    return createImage('./img/img-2.jpg')
+}).then((img)=>{
+    currentImgEl = img
+    console.log("Image 2 is loaded")
+    return wait(2)
+}).then(()=>{
+    currentImgEl.style.display = "none"
+}).catch(error=>{
+    console.error(error)
+}).finally(()=>{
+    console.log("finally block called")
 })
