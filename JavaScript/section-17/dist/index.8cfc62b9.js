@@ -557,13 +557,16 @@ function hmrAccept(bundle, id) {
 }
 
 },{}],"6rimH":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _shoppingCartJs = require("./shoppingCart.js");
 var _mainJs = require("./main.js");
+var _shoppingCartJsDefault = parcelHelpers.interopDefault(_shoppingCartJs);
 console.log("Importing Module....", (0, _shoppingCartJs.greet), (0, _shoppingCartJs.greet1), (0, _shoppingCartJs.greet2), (0, _shoppingCartJs.greet3));
-(0, _shoppingCartJs.add)(10, 20);
-console.log("ABC", (0, _mainJs.abc));
+(0, _shoppingCartJsDefault.default)("Apple", 5);
+(0, _shoppingCartJsDefault.default)("Orange", 15);
+console.log("Cart", (0, _shoppingCartJs.cart));
 
-},{"./shoppingCart.js":"l6bJl","./main.js":"adjPd"}],"l6bJl":[function(require,module,exports) {
+},{"./shoppingCart.js":"l6bJl","./main.js":"adjPd","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"l6bJl":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "greet", ()=>greet);
@@ -571,6 +574,7 @@ parcelHelpers.export(exports, "greet1", ()=>greet1);
 parcelHelpers.export(exports, "greet2", ()=>greet2);
 parcelHelpers.export(exports, "greet3", ()=>greet3);
 parcelHelpers.export(exports, "add", ()=>add);
+parcelHelpers.export(exports, "cart", ()=>cart);
 console.log("Exporting Module....");
 // export const greet = "Hello Ravi"
 // export const greet1 = "Hello Ravi1"
@@ -583,6 +587,13 @@ const greet3 = "Hello Ravi3";
 function add(a, b) {
     console.log("Sum=", a + b);
 }
+const cart = [];
+exports.default = function(product, quantity) {
+    cart.push({
+        product,
+        quantity
+    });
+};
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {

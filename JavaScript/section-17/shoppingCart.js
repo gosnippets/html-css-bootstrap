@@ -18,3 +18,13 @@ export { greet, greet1, greet2, greet3 }
 export function add(a, b) {
     console.log("Sum=", a + b)
 }
+
+// =====================================================
+// Cart example
+
+export const cart = []
+
+export default function (product, quantity) {
+    cart.push({ product, quantity })
+};
+
