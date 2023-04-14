@@ -4,7 +4,36 @@
 
 // 3. Create a module that exports an object with properties for converting different units of measurement (e.g. length, weight, volume).
 
+// units.js 
+// length:
+//         metersToFeet
+//         feetToMeters
+
+// weight:
+        // kilogramsToPounds
+        // poundsToKilograms
+
+// volume:
+        // litersToGallons
+        // gallonsToLiters
+
+// main.js 
+units.length.metersToFeet(10) // result should be in feet
+
 // 4. Create a module that exports a class to represent a bank account, with methods for depositing, withdrawing, and checking the balance.
+
+// bank.js 
+
+// deposit
+// withdraw
+// getBalance
+
+// main.js
+myAccount.deposit(10000)
+console.log(myAccount.getBalance())
+
+myAccount.withdraw(10000)
+console.log(myAccount.getBalance())
 
 // 5. Create a module that exports a function to generate a random password with a given length and complexity level (e.g. lowercase, uppercase, numbers, symbols).
 
